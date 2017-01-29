@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "baseUrl": "",
+        "target": "es6",
+        "module": "es6",
+        "moduleResolution": "node",
+        "declaration": true,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "mapRoot": "",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "typeRoots": ["./node_modules/@types"],
+        "types": [
+            "node"
+        ],
+        "lib": [
+            "dom",
+            "es6"
+        ]
+    },
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.ngfactory.ts",
+        "**/*.shim.ts"
+    ],
+    "angularCompilerOptions": {
+        "genDir": "dist",
+        "entryModule": "src/lib/algolia.module#AlgoliaModule"
+    }
+}

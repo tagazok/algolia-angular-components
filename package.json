@@ -1,0 +1,54 @@
+{
+    "name": "@tagazok/algolia-components",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": {
+        "name": "Olivier Leplus",
+        "email": "leplus.olivier@gmail.com"
+    },
+    "engines": {
+        "node": ">= 6.0.42"
+    },
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:tagazok/algolia-angular-components.git"
+    },
+    "homepage": "https://github.com/tagazok/algolia-angular-components",
+    "bugs": "https://github.com/tagazok/algolia-angular-components/issues",
+    "description": "A component library for Angolia",
+    "main": "dist/index.js",
+    "scripts": {
+        "clean": "rimraf dist/",
+        "build:aot": "ngc -p tsconfig.json",
+        "build:jit": "tsc -p tsconfig.json",
+        "build": "npm run clean && npm run build:jit"
+    },
+    "types": "dist/index.d.ts",
+    "private": false,
+    "keywords": [
+        "angular",
+        "algolia"
+    ],
+    "dependencies": {
+        "@angular/common": "^2.3.1",
+        "@angular/compiler": "^2.3.1",
+        "@angular/core": "^2.3.1",
+        "@angular/platform-browser": "^2.3.1",
+        "core-js": "2.4.1",
+        "rimraf": "^2.5.4",
+        "rxjs": "5.0.2",
+        "typescript": "2.0.10",
+        "zone.js": "0.7.4",
+        "@types/algoliasearch": "^3.18.0",
+        "algoliasearch": "^3.20.4",
+        "@angular/flex-layout": "^2.0.0-beta.3"
+    },
+    "devDependencies": {
+        "@angular/compiler-cli": "^2.3.1",
+        "@angular/platform-server": "^2.3.1",
+        "@types/jasmine": "2.2.30",
+        "@types/node": "6.0.54",
+        "@types/algoliasearch": "^3.18.0"
+    }
+}

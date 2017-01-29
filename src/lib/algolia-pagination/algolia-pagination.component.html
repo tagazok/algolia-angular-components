@@ -1,0 +1,5 @@
+<ul class="pagination">
+  <li *ngFor="let i of range" [ngClass]="{'active' : (i) === as.content.page+1}" (click)="changePage(i-1)">
+    <div fxLayoutAlign="center center">{{i}}</div>
+  </li>
+</ul>

@@ -1,0 +1,5 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" style="flex-wrap: wrap; background-color: #e4e4e4;">
+  <div fxFlex="25" class="my-item" *ngFor="let result of as.content.hits; let i = index" fxLayout="column">
+    <template [ngTemplateOutlet]="itemTemplate" [ngOutletContext]="{item: result, index: i}"></template>
+  </div>
+</div>
