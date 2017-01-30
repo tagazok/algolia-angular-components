@@ -14,12 +14,12 @@ import { AlgoliaSortComponent } from './algolia-sort/algolia-sort.component';
 import { AlgoliaPaginationComponent } from './algolia-pagination/algolia-pagination.component';
 import { AlgoliaStatsComponent } from './algolia-stats/algolia-stats.component';
 import { AlgoliaService } from './algolia.service';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule, 
-    // FlexLayoutModule.forRoot()
+    FlexLayoutModule.forRoot()
     ],
   exports: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
   declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent]

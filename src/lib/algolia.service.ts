@@ -14,6 +14,7 @@ export class AlgoliaService {
   content: any = {};
   parameters: any = {};
   facets: any = [];
+  facetFilters: any = {};
   query: string = '';
   
   resultUpdated: EventEmitter<any> = new EventEmitter();
@@ -38,6 +39,30 @@ export class AlgoliaService {
     }
   }
 
+  addFacetFilter(facet, value) {
+    if (this.facetFilters[facet] === undefined)
+      this.facetFilters[facet] = [];
+    this.facetFilters[facet].push(value.key);
+    this.search();
+  }
+
+  removeFacetFilter(facet, value) {
+    debugger;
+  }
+
+  buildFacetFilters() {
+    let result = [];
+    for (let key in this.facetFilters) {
+      for (let val of this.facetFilters[key]) {
+        result.push(`${key}:${val}`);
+      }
+    }
+    // hum...
+    // Object.entries(this.facetFilters).forEach(([key, value]) => {
+    // });
+    return result;
+  }
+
   buildParameters() {
     if (Object.keys(this.facets).length === 0 && this.facets.constructor === Object) {
       delete this.parameters.facets;
@@ -48,6 +73,7 @@ export class AlgoliaService {
 
   async search() {
     this.buildParameters();
+    this.parameters.facetFilters = this.buildFacetFilters();
     this.content = await this.index.search(this.query, this.parameters);
     this.resultUpdated.emit();
 

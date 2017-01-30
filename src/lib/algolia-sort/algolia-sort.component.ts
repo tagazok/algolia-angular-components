@@ -6,7 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   // styleUrls: ['./algolia-sort.component.css']
   template: `
   <div>
-    
+  <select>
+    <option *ngFor="let indice of indices" [value]="indice.value">
+      {{indice.label}}
+    </option>
+  </select>
   </div>
   `
 })

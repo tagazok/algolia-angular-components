@@ -6,8 +6,14 @@ import { AlgoliaService } from '../algolia.service';
   // templateUrl: './algolia-pagination.component.html',
   // styleUrls: ['./algolia-pagination.component.scss']
   template: `
-  <style>
-    .pagination {
+  <ul class="pagination">
+    <li *ngFor="let i of range" [ngClass]="{'active' : (i) === as.content.page+1}" (click)="changePage(i-1)">
+      <div>{{i}}</div>
+    </li>
+  </ul>
+  `,
+  styles: [`
+  .pagination {
     list-style-type: none;
     }
     .pagination li {
@@ -21,20 +27,23 @@ import { AlgoliaService } from '../algolia.service';
       cursor: pointer;
     }
     .pagination li div {
-        width: 100%;
-        height: 100%;
+      width: 100%;
+      height: 100%;
+
+      height: 100%;
+      box-sizing: border-box;
+      max-height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
     }
 
     .pagination li.active {
       background-color: #20cf7d;
     }
-  </style>
-  <ul class="pagination">
-    <li *ngFor="let i of range" [ngClass]="{'active' : (i) === as.content.page+1}" (click)="changePage(i-1)">
-      <div fxLayoutAlign="center center">{{i}}</div>
-    </li>
-  </ul>
-  `
+  `]
 })
 export class AlgoliaPaginationComponent implements OnInit {
   @Input() padding: number = 3;
@@ -45,7 +54,7 @@ export class AlgoliaPaginationComponent implements OnInit {
   constructor(private as: AlgoliaService) { 
     this.buildRange();
   }
-  
+
   buildRange() {
     this.buildNbDisplayedPages();
     let paddingLeft = this.buildPaddingLeft();

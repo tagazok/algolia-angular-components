@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AlgoliaService } from '../algolia.service'
 
 @Component({
@@ -6,17 +6,16 @@ import { AlgoliaService } from '../algolia.service'
   // templateUrl: './stats.component.html',
   // styleUrls: ['./stats.component.css']
   template: `
-  <div fxLayoutAlign="end center">
+  <div [ngClass]="cssclass">
     {{as.content.nbHits |number}} results found in {{as.content.processingTimeMS}}ms
   </div>
-  `,
-  styles: ['div { color: #777; font-size: .8em; padding: .5%; }']
+  `
 })
 export class AlgoliaStatsComponent implements OnInit {
+  @Input() cssclass: string;
 
   constructor(private as: AlgoliaService) { }
 
   ngOnInit() {
   }
-
 }
