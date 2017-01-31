@@ -1,12 +1,16 @@
-## Algolia components library
+## Algolia components library for Angular
 
 Library of components for Algolia on angular.
 
   <h2 align="center">WARNING: THIS IS A WIP</h2>
 
 So :
-* Component may change
-* Documentation may not be accurate and up to date
+* Components may change, appear from nowhere or disapear in a black hole (it happens)
+* Documentation may not be accurate and no up to date
+
+### Installation
+Coming soon (when I have published it on npmjs)
+In the meantime, you can use it using npm link :)
 
 ### Usage
 Import the AlgoliaModule and the AlgoliaService in your app
@@ -33,51 +37,27 @@ You are now ready to use the components in your app \o/
 ### List of components
 
 #### Search
-Display a searchbar that triggers a search on each key stroke
+Displays a search bar that triggers a live search
 ```html
 <app-algolia-search [index]="'ikea'" [hitsPerPage]="16"></app-algolia-search>
 ```
 Parameters :
 * index : The algolia index
-* hitsPerPage : The number of results you want the search to return
+* hitsPerPage : The maximum number of results you want the research to return
 
 
 #### Results
-Display the results of your research in a custom template
+Displays the results of your research in a custom template
 ```html
 <app-algolia-results>
   <template let-item="item">
-    <!-- The html of a single result item -->
+    <!-- The html template of a single result item -->
   </template>
 </app-algolia-result>
 ```
 
-#### Stats
-Simply display stats of the result of the research
-```html
-<app-algolia-stats [cssclass]="'my-stats'"></app-algolia-stats>
-```
-Parameters :
-* cssclass : The css class you want to use for this component (will be removed in future release)
-
-#### Sort
-Allow you to specify how you want your result to be sorted.
-```html
-<app-algolia-sort [indices]="sortIndices" [label]="'Sort by'"></app-algolia-sort>
-```
-Parameters :
-* label : The placeholder/title of the search field (will be removed in future release as md has been removed)
-* indices : List of items to sort with. Exemple :
-```javascript
-const sortIndices = [
-      {value: 'ikea', label: 'Featured'},
-      {value: 'ikea_price_asc', label: 'Price asc.'},
-      {value: 'ikea_price_desc', label: 'Price desc.'}
-    ];
-```
-
-### facets
-For each facet you add, the search will ask facets
+### Facets
+Displays facet and manage filters on click.
 ```html
 <app-algolia-facets [attribute]="'materials'"[label]="'Material'" [limit]="'10'" [selectedcssclass]="'selected-filter'">
   <template let-item="item">
@@ -88,11 +68,50 @@ For each facet you add, the search will ask facets
 </app-algolia-facets>
 ```
 Parameters :
-* attribute : The attribute you want the facet
-* label : The label of the List (may be removed... not sure yet)
-* limit : The maximum number of result per facets
+* attribute : The attribute of which you want the facet
+* label : The label of the List (may be removed in future release... not sure yet)
+* limit : The maximum number of results per facets
 * selectedcssclass : The class to apply when a facet value is selected for filtering the query
 
+
+#### Stats
+Simply displays the stats of the result of the research
+```html
+<app-algolia-stats [cssclass]="'my-stats'"></app-algolia-stats>
+```
+Parameters :
+* cssclass : The css class you want to use for this component (will be removed in future release)
+
+#### Sort (early WIP)
+Allows you to specify how you want your result to be sorted.
+```html
+<app-algolia-sort [indices]="sortIndices" [label]="'Sort by'"></app-algolia-sort>
+```
+Parameters :
+* label : The placeholder/title of the search field (will be removed in future release as md- has been removed)
+* indices : List of items to sort with. Exemple :
+```javascript
+const sortIndices = [
+      {value: 'ikea', label: 'Featured'},
+      {value: 'ikea_price_asc', label: 'Price asc.'},
+      {value: 'ikea_price_desc', label: 'Price desc.'}
+    ];
+```
+
+#### Pagination
+Add pagination to navigate in your results
+```html
+<app-algolia-pagination [padding]="2"></app-algolia-pagination>
+```
+Parameters :
+* padding : See +/- n page numbers (default is 3 if not specified)
+
+TODO :
+* See what we can do with css customisation 
+* Better algolia-result customisation (row / card / column views)
+* manage OR request for filters.
+* In algolia-stats. Add attribute to choose which stat to display (# and time)
+* Add prev / new arrow on pagination
 
 ## Example
 <p align="center">
