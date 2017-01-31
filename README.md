@@ -22,14 +22,13 @@ Inject the AlgoliaService in your component and set your App key and App id
 
 ```javascript
 @Component({
-  selector: 'app-root',
+  selector: 'whatever',
   template: '...',
 })
 export class AppComponent {
 
-  constructor(as: AlgoliaService) {
-    as.appId = "YOUR_APP_KEY"
-    as.appKey = "YOUR_APP_ID"
+  constructor(private as: AlgoliaService) {
+    this.as.connect("YOUR_APP_KEY", "YOUR_APP_ID");
   }
 ```
 You are now ready to use the components in your app \o/

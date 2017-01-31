@@ -14,14 +14,13 @@ export class AlgoliaService {
   facetFilters: any = {};
   query: string = '';
   
-  appId: string = "";
-  apiKey: string = ""
-  
   resultUpdated: EventEmitter<any> = new EventEmitter();
 
   constructor() {
-    this.client = algoliasearch(this.appId, this.apiKey);
-    console.log("AlgoliaService constructor");
+  }
+
+  connect(appId, apiKey) {
+    this.client = algoliasearch(appId, apiKey);
   }
 
   setIndex(name) {
