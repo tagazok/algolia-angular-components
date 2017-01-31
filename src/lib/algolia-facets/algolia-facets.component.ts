@@ -7,10 +7,10 @@ import { AlgoliaService } from '../algolia.service';
   // styleUrls: ['./algolia-facets.component.css']
   template: `
   <div>
-    <p *ngIf="label">{{label}}</p>
+    <p *ngIf="label"><b>{{label}}</b></p>
     <ul *ngIf='as.content.facets !== undefined' class="facets">
       <li *ngFor="let facet of as.content.facets[attribute] | mapToIterable">
-        <div (click)="updateSearch(facet)" [ngClass]="isFacetActive(facet.key) ? selectedcssclass : ''">
+        <div (click)="updateSearch(facet)" [ngClass]="isFacetActive(facet.key) ? selectedcssclass : ''" class="facet-item">
           <template [ngTemplateOutlet]="itemTemplate" [ngOutletContext]="{item: facet}"></template>
         </div>
       </li>
@@ -27,7 +27,11 @@ import { AlgoliaService } from '../algolia.service';
     padding: 0;
     margin: 0;
     line-height: 1.42857143;
-  }`]
+  }
+  .facet-item {
+    cursor: pointer;
+  }
+  `]
 })
 export class AlgoliaFacetsComponent implements OnInit {
   @Input() attribute: string;
