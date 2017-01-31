@@ -3,7 +3,7 @@ import * as algoliasearch from 'algoliasearch';
 
 const APPLICATION_ID = 'latency';
 const API_KEY = '6be0576ff61c053d5f9a3225e2a90f76';
-const ATTRIBUTES = null;
+// const ATTRIBUTES = null;
 
 
 @Injectable()
@@ -47,7 +47,8 @@ export class AlgoliaService {
   }
 
   removeFacetFilter(facet, value) {
-    debugger;
+    this.facetFilters[facet].splice(this.facetFilters[facet].indexOf(value), 1);
+    this.search();
   }
 
   buildFacetFilters() {

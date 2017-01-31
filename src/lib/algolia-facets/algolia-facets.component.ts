@@ -59,7 +59,7 @@ export class AlgoliaFacetsComponent implements OnInit {
   };
 
   updateSearch(facet) {
-    if (this.as.facetFilters[facet.key] === undefined) {
+    if ((this.as.facetFilters[this.attribute] === undefined) || !this.as.facetFilters[this.attribute].includes(facet.key)) {
       this.as.addFacetFilter(this.attribute, facet);
     } else {
       this.as.removeFacetFilter(this.attribute, facet);
