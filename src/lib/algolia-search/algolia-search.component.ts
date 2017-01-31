@@ -14,7 +14,7 @@ import { AlgoliaService } from '../algolia.service';
 })
 export class AlgoliaSearchComponent implements OnInit {
   @Input() index: string;
-  @Input() hitsPerPage: number;
+  @Input() hitsPerPage: number = 12;
 
   constructor(private as: AlgoliaService) { 
   }

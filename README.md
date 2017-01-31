@@ -42,7 +42,7 @@ Displays a search bar that triggers a live search
 ```
 Parameters :
 * index : The algolia index
-* hitsPerPage : The maximum number of results you want the research to return
+* hitsPerPage : The maximum number of results you want the research to return (default is 12)
 
 
 #### Results
