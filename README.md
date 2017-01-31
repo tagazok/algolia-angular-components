@@ -1,4 +1,4 @@
-## Algolia component library
+## Algolia components library
 
 Library of components for Algolia on angular.
 
@@ -7,6 +7,28 @@ Library of components for Algolia on angular.
 So :
 * Component may change
 * Documentation may not be accurate and up to date
+
+### Usage
+Import the AlgoliaModule and the AlgoliaService in your app
+```javascript
+import { AlgoliaModule, AlgoliaService } from '@tagazok/algolia-angular-components'
+```  
+  
+Inject the AlgoliaService in your component and set your App key and App id
+
+```javascript
+@Component({
+  selector: 'app-root',
+  template: '...',
+})
+export class AppComponent {
+
+  constructor(as: AlgoliaService) {
+    as.appId = "YOUR_APP_KEY"
+    as.appKey = "YOUR_APP_ID"
+  }
+```
+You are now ready to use the components in your app \o/
 
 ### List of components
 
@@ -72,7 +94,7 @@ Parameters :
 * selectedcssclass : The class to apply when a facet value is selected for filtering the query
 
 
-## Exemple
+## Example
 <p align="center">
   <img src="http://oleplus.free.fr/screenshots/algolia-angular-components.png" alt="Screenshot" />
 </p>
