@@ -9,8 +9,9 @@ So :
 * Documentation may not be accurate and no up to date
 
 ### Installation
-Coming soon (when I have published it on npmjs)
-In the meantime, you can use it using npm link :)
+```sh
+npm install -save @tagazok/algolia-angular-components
+```
 
 ### Usage
 Import the AlgoliaModule and the AlgoliaService in your app
