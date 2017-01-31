@@ -113,9 +113,13 @@ TODO :
 * Add prev / new arrow on pagination
 
 ## Example
+This app has been built with the components of this library with the idea of <a href="https://community.algolia.com/instantsearch.js/examples/e-commerce/">Algolia e-commerce demo app</a>  
+*To be published very soon on github :)*
 <p align="center">
-  <img src="http://oleplus.free.fr/screenshots/algolia-angular-components.png" alt="Screenshot" />
+  <img src="http://oleplus.free.fr/screenshots/algolia-computer.png" alt="Screenshot" />
+  View on Chrome (see <a href="http://oleplus.free.fr/screenshots/algolia-ipad.png" title="Ipad" target="_blank">Ipad</a> and <a href="http://oleplus.free.fr/screenshots/algolia-android.png" title="Nexus 5X" target="_blank">Nexus 5X</a> screenshots)
 </p>
+
 
 ## Thanks
 Created using https://github.com/manekinekko/angular-library-starter
