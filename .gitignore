@@ -2,7 +2,7 @@
 
 # compiled output
 /tmp
-dist/
+#dist/
 
 # dependencies
 /node_modules
