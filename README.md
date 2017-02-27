@@ -105,6 +105,16 @@ Add pagination to navigate in your results
 Parameters :
 * padding : See +/- n page numbers (default is 3 if not specified)
 
+#### Stars 
+Display Stars, usefull for ratings
+```html
+<app-algolia-stars [value]="3" [min]="1" [max]="5"></app-algolia-stars>
+```
+Parameters :
+min: The minimum value (default is 0);
+max: The maximum value to display empty stars
+value : The number of plain stars
+
 TODO :
 * See what we can do with css customisation 
 * Better algolia-result customisation (row / card / column views)

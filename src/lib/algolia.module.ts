@@ -13,13 +13,14 @@ import { AlgoliaSortComponent } from './algolia-sort/algolia-sort.component';
 import { AlgoliaPaginationComponent } from './algolia-pagination/algolia-pagination.component';
 import { AlgoliaStatsComponent } from './algolia-stats/algolia-stats.component';
 import { AlgoliaService, ApiServiceConfig } from './algolia.service';
+import { AlgoliaStarsComponent } from './algolia-stars/algolia-stars.component';
 
 @NgModule({
   imports: [
     CommonModule, 
     ],
-  exports: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
-  declarations: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+  exports: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent, AlgoliaStarsComponent],
+  declarations: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent, AlgoliaStarsComponent],
   providers: [AlgoliaService]
 })
 export class AlgoliaModule {

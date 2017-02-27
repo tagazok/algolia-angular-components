@@ -16,7 +16,7 @@
     },
     "homepage": "https://github.com/tagazok/algolia-angular-components",
     "bugs": "https://github.com/tagazok/algolia-angular-components/issues",
-    "description": "A component library for Angolia",
+    "description": "A component library for Algolia",
     "main": "dist/index.js",
     "scripts": {
         "clean": "rimraf dist/",
