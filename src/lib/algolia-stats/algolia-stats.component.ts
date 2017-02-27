@@ -3,12 +3,10 @@ import { AlgoliaService } from '../algolia.service'
 
 @Component({
   selector: 'app-algolia-stats',
-  // templateUrl: './stats.component.html',
-  // styleUrls: ['./stats.component.css']
   template: `
-  <div [ngClass]="cssclass">
+  <span>
     {{as.content.nbHits |number}} results found in {{as.content.processingTimeMS}}ms
-  </div>
+  </span>
   `
 })
 export class AlgoliaStatsComponent implements OnInit {
