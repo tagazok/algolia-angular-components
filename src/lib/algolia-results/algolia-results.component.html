@@ -1,5 +1,0 @@
-<div class="flex-row flex-space-around flex-center flex-wrap" style=" background-color: #e4e4e4;">
-  <div class="my-item flex-column" *ngFor="let result of as.content.hits; let i = index" style="max-width: 25%;">
-    <template [ngTemplateOutlet]="itemTemplate" [ngOutletContext]="{item: result, index: i}"></template>
-  </div>
-</div>

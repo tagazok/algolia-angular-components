@@ -3,8 +3,6 @@ import { AlgoliaService } from '../algolia.service';
 
 @Component({
   selector: 'app-algolia-results',
-  // templateUrl: './algolia-results.component.html',
-  // styleUrls: ['./algolia-results.component.scss']
   template: `
   <div class="flex-row flex-space-around flex-center flex-wrap">
     <div class="my-item flex-column col-width" *ngFor="let result of as.content.hits; let i = index">

@@ -58,8 +58,6 @@ __decorate([
 AlgoliaFacetsComponent = __decorate([
     Component({
         selector: 'app-algolia-facets',
-        // templateUrl: './algolia-facets.component.html',
-        // styleUrls: ['./algolia-facets.component.css']
         template: `
   <div>
     <p *ngIf="label"><b>{{label}}</b></p>

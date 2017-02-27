@@ -13,6 +13,7 @@ export let AlgoliaSearchComponent = class AlgoliaSearchComponent {
     constructor(as) {
         this.as = as;
         this.hitsPerPage = 12;
+        this.placeHolder = "Search";
     }
     ngOnInit() {
         this.as.setIndex(this.index);
@@ -32,17 +33,25 @@ __decorate([
     Input(), 
     __metadata('design:type', Number)
 ], AlgoliaSearchComponent.prototype, "hitsPerPage", void 0);
+__decorate([
+    Input(), 
+    __metadata('design:type', String)
+], AlgoliaSearchComponent.prototype, "placeHolder", void 0);
 AlgoliaSearchComponent = __decorate([
     Component({
         selector: 'app-algolia-search',
-        // templateUrl: './algolia-search.component.html',
-        // styleUrls: ['./algolia-search.component.css']
         template: `
     <div>
-      <input type="text" #searchbox (keyup)="onKey(searchbox.value)" placeholder="Search a product">
+      <input type="text" #searchbox (keyup)="onKey(searchbox.value)" placeholder="{{placeHolder}}">
     </div>
   `,
-        styles: ['input { width: 100%; padding: 10px; font-size: 1.2em; box-sizing: border-box; }']
+        styles: [`
+    input { 
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2em;
+      box-sizing: border-box;
+    }`]
     }), 
     __metadata('design:paramtypes', [AlgoliaService])
 ], AlgoliaSearchComponent);

@@ -51,8 +51,6 @@ __decorate([
 AlgoliaPaginationComponent = __decorate([
     Component({
         selector: 'app-algolia-pagination',
-        // templateUrl: './algolia-pagination.component.html',
-        // styleUrls: ['./algolia-pagination.component.scss']
         template: `
   <ul class="pagination">
     <li *ngFor="let i of range" [ngClass]="{'active' : (i) === as.content.page+1}" (click)="changePage(i-1)">

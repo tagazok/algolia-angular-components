@@ -12,7 +12,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlgoliaAppDirective } from './algolia-app.directive';
 import { AlgoliaSearchComponent } from './algolia-search/algolia-search.component';
 import { AlgoliaResultsComponent } from './algolia-results/algolia-results.component';
 import { AlgoliaFacetsComponent } from './algolia-facets/algolia-facets.component';
@@ -42,8 +41,8 @@ AlgoliaModule = AlgoliaModule_1 = __decorate([
         imports: [
             CommonModule,
         ],
-        exports: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
-        declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+        exports: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+        declarations: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
         providers: [AlgoliaService]
     }),
     __param(0, Optional()),

@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 // import { AppPipe } from './app.pipe';
 // import { AppComponent } from './component/app.component';
 
-import { AlgoliaAppDirective } from './algolia-app.directive';
 import { AlgoliaSearchComponent } from './algolia-search/algolia-search.component';
 import { AlgoliaResultsComponent } from './algolia-results/algolia-results.component';
 import { AlgoliaFacetsComponent } from './algolia-facets/algolia-facets.component';
@@ -19,8 +18,8 @@ import { AlgoliaService, ApiServiceConfig } from './algolia.service';
   imports: [
     CommonModule, 
     ],
-  exports: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
-  declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+  exports: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+  declarations: [AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
   providers: [AlgoliaService]
 })
 export class AlgoliaModule {

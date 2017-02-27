@@ -1,1 +1,0 @@
-{"version":3,"file":"algolia-app.directive.js","sourceRoot":"","sources":["../src/lib/algolia-app.directive.ts"],"names":[],"mappings":";;;;;;;;;OAAO,EAAE,SAAS,EAAc,MAAM,eAAe;OAC9C,EAAE,cAAc,EAAE,MAAM,mBAAmB;AAMlD;IAEE,YAAY,EAAkB;QAC5B,2BAA2B;QAC3B,kBAAkB;IACpB,CAAC;AAKH,CAAC;AAdD;IAAC,SAAS,CAAC;QACT,QAAQ,EAAE,iBAAiB;QAC3B,SAAS,EAAE,CAAC,cAAc,CAAC;KAC5B,CAAC;;uBAAA;AAWD"}

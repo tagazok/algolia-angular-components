@@ -3,8 +3,6 @@ import { AlgoliaService } from '../algolia.service';
 
 @Component({
   selector: 'app-algolia-search',
-  // templateUrl: './algolia-search.component.html',
-  // styleUrls: ['./algolia-search.component.css']
   template: `
     <div>
       <input type="text" #searchbox (keyup)="onKey(searchbox.value)" placeholder="{{placeHolder}}">

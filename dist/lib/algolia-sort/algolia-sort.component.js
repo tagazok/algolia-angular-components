@@ -27,8 +27,6 @@ __decorate([
 AlgoliaSortComponent = __decorate([
     Component({
         selector: 'app-algolia-sort',
-        // templateUrl: './algolia-sort.component.html',
-        // styleUrls: ['./algolia-sort.component.css']
         template: `
   <div>
   <select>

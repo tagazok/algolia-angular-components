@@ -4,6 +4,7 @@ export declare class AlgoliaSearchComponent implements OnInit {
     private as;
     index: string;
     hitsPerPage: number;
+    placeHolder: string;
     constructor(as: AlgoliaService);
     ngOnInit(): void;
     onKey(str: string): void;
