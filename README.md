@@ -19,18 +19,17 @@ Import the AlgoliaModule and the AlgoliaService in your app
 import { AlgoliaModule, AlgoliaService } from '@tagazok/algolia-angular-components'
 ```  
   
-Inject the AlgoliaService in your component and set your App key and App id
+Load the module into your app passing
 
 ```javascript
-@Component({
-  selector: 'whatever',
-  template: '...',
+@NgModule({
+  ...,
+  imports: [
+    AlgoliaModule.forRoot({appId: 'YOUR_APP_ID', apiKey: 'YOUR_APP_KEY'}),
+  ],
+  ...
 })
-export class AppComponent {
-
-  constructor(private as: AlgoliaService) {
-    this.as.connect("YOUR_APP_KEY", "YOUR_APP_ID");
-  }
+export class AppModule { }
 ```
 You are now ready to use the components in your app \o/
 
