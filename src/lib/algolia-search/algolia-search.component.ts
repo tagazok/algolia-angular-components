@@ -7,14 +7,21 @@ import { AlgoliaService } from '../algolia.service';
   // styleUrls: ['./algolia-search.component.css']
   template: `
     <div>
-      <input type="text" #searchbox (keyup)="onKey(searchbox.value)" placeholder="Search a product">
+      <input type="text" #searchbox (keyup)="onKey(searchbox.value)" placeholder="{{placeHolder}}">
     </div>
   `,
-  styles: ['input { width: 100%; padding: 10px; font-size: 1.2em; box-sizing: border-box; }']
+  styles: [`
+    input { 
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2em;
+      box-sizing: border-box;
+    }`]
 })
 export class AlgoliaSearchComponent implements OnInit {
   @Input() index: string;
   @Input() hitsPerPage: number = 12;
+  @Input() placeHolder: string = "Search";
 
   constructor(private as: AlgoliaService) { 
   }

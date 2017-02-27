@@ -38,11 +38,12 @@ You are now ready to use the components in your app \o/
 #### Search
 Displays a search bar that triggers a live search
 ```html
-<app-algolia-search [index]="'ikea'" [hitsPerPage]="16"></app-algolia-search>
+<app-algolia-search [index]="'ikea'" [hitsPerPage]="16" [placeHolder]="Enter text..."></app-algolia-search>
 ```
 Parameters :
 * index : The algolia index
 * hitsPerPage : The maximum number of results you want the research to return (default is 12)
+* placeHolder : The placeholder of the input (default is "Search")
 
 
 #### Results
