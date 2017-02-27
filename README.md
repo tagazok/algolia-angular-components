@@ -77,10 +77,9 @@ Parameters :
 #### Stats
 Simply displays the stats of the result of the research
 ```html
-<app-algolia-stats [cssclass]="'my-stats'"></app-algolia-stats>
+<app-algolia-stats></app-algolia-stats>
 ```
-Parameters :
-* cssclass : The css class you want to use for this component (will be removed in future release)
+<!--Parameters :-->
 
 #### Sort (early WIP)
 Allows you to specify how you want your result to be sorted.
