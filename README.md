@@ -117,10 +117,12 @@ value : The number of plain stars
 
 TODO :
 * See what we can do with css customisation 
-* Better algolia-result customisation (row / card / column views)
+* [DONE] Better algolia-result customisation (row / card / column views)
 * manage OR request for filters.
 * In algolia-stats. Add attribute to choose which stat to display (# and time)
 * Add prev / new arrow on pagination
+* "Filter" by component
+* Automatic routes change when whanging page or filter, etc
 
 ## Example
 This app has been built with the components of this library with the idea of <a href="https://community.algolia.com/instantsearch.js/examples/e-commerce/">Algolia e-commerce demo app</a>  
