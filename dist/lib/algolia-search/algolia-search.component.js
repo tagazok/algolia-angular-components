@@ -12,6 +12,7 @@ import { AlgoliaService } from '../algolia.service';
 export let AlgoliaSearchComponent = class AlgoliaSearchComponent {
     constructor(as) {
         this.as = as;
+        this.hitsPerPage = 12;
     }
     ngOnInit() {
         this.as.setIndex(this.index);

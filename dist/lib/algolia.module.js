@@ -7,7 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { NgModule } from '@angular/core';
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlgoliaAppDirective } from './algolia-app.directive';
 import { AlgoliaSearchComponent } from './algolia-search/algolia-search.component';
@@ -17,13 +20,18 @@ import { MapToIterablePipe } from './map-to-iterable.pipe';
 import { AlgoliaSortComponent } from './algolia-sort/algolia-sort.component';
 import { AlgoliaPaginationComponent } from './algolia-pagination/algolia-pagination.component';
 import { AlgoliaStatsComponent } from './algolia-stats/algolia-stats.component';
-import { AlgoliaService } from './algolia.service';
+import { AlgoliaService, ApiServiceConfig } from './algolia.service';
 let AlgoliaModule_1 = class AlgoliaModule {
-    static forRoot() {
+    constructor(parentModule) {
+        if (parentModule) {
+            throw new Error('CoreModule is already loaded. Import it in the AppModule only');
+        }
+    }
+    static forRoot(config) {
         return {
             ngModule: AlgoliaModule_1,
             providers: [
-                AlgoliaService
+                { provide: ApiServiceConfig, useValue: config }
             ]
         };
     }
@@ -35,8 +43,11 @@ AlgoliaModule = AlgoliaModule_1 = __decorate([
             CommonModule,
         ],
         exports: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
-        declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent]
-    }), 
-    __metadata('design:paramtypes', [])
+        declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+        providers: [AlgoliaService]
+    }),
+    __param(0, Optional()),
+    __param(0, SkipSelf()), 
+    __metadata('design:paramtypes', [AlgoliaModule])
 ], AlgoliaModule);
 //# sourceMappingURL=/Users/olivier/lab/algolia/algolia-components/lib/algolia.module.js.map

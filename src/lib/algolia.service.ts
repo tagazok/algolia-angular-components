@@ -1,7 +1,12 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Optional } from '@angular/core';
 import * as algoliasearch from 'algoliasearch';
 
 // const ATTRIBUTES = null;
+
+export class ApiServiceConfig {
+  apiKey = 'API KEY';
+  appId = 'API KEY';
+}
 
 @Injectable()
 export class AlgoliaService {
@@ -13,14 +18,21 @@ export class AlgoliaService {
   facets: any = [];
   facetFilters: any = {};
   query: string = '';
-  
+  apiKey: string = '';
+  appId: string = '';
+
   resultUpdated: EventEmitter<any> = new EventEmitter();
 
-  constructor() {
+  constructor(@Optional() config: ApiServiceConfig) {
+    if (config) { 
+      this.appId = config.appId;
+      this.apiKey = config.apiKey;
+    }
+    this.connect();
   }
 
-  connect(appId, apiKey) {
-    this.client = algoliasearch(appId, apiKey);
+  connect() {
+    this.client = algoliasearch(this.appId, this.apiKey);
   }
 
   setIndex(name) {

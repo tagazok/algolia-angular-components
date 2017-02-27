@@ -7,6 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -15,11 +18,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments)).next());
     });
 };
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Optional } from '@angular/core';
 import * as algoliasearch from 'algoliasearch';
 // const ATTRIBUTES = null;
-export let AlgoliaService = class AlgoliaService {
+export class ApiServiceConfig {
     constructor() {
+        this.apiKey = 'API KEY';
+        this.appId = 'API KEY';
+    }
+}
+export let AlgoliaService = class AlgoliaService {
+    constructor(config) {
         this.client = null;
         this.index = null;
         this.content = {};
@@ -27,10 +36,17 @@ export let AlgoliaService = class AlgoliaService {
         this.facets = [];
         this.facetFilters = {};
         this.query = '';
+        this.apiKey = '';
+        this.appId = '';
         this.resultUpdated = new EventEmitter();
+        if (config) {
+            this.appId = config.appId;
+            this.apiKey = config.apiKey;
+        }
+        this.connect();
     }
-    connect(appId, apiKey) {
-        this.client = algoliasearch(appId, apiKey);
+    connect() {
+        this.client = algoliasearch(this.appId, this.apiKey);
     }
     setIndex(name) {
         this.index = this.client.initIndex(name);
@@ -85,7 +101,8 @@ export let AlgoliaService = class AlgoliaService {
     }
 };
 AlgoliaService = __decorate([
-    Injectable(), 
-    __metadata('design:paramtypes', [])
+    Injectable(),
+    __param(0, Optional()), 
+    __metadata('design:paramtypes', [ApiServiceConfig])
 ], AlgoliaService);
 //# sourceMappingURL=/Users/olivier/lab/algolia/algolia-components/lib/algolia.service.js.map

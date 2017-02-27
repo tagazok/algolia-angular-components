@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // import { AppService } from './app.service';
@@ -13,21 +13,29 @@ import { MapToIterablePipe } from './map-to-iterable.pipe';
 import { AlgoliaSortComponent } from './algolia-sort/algolia-sort.component';
 import { AlgoliaPaginationComponent } from './algolia-pagination/algolia-pagination.component';
 import { AlgoliaStatsComponent } from './algolia-stats/algolia-stats.component';
-import { AlgoliaService } from './algolia.service';
+import { AlgoliaService, ApiServiceConfig } from './algolia.service';
 
 @NgModule({
   imports: [
     CommonModule, 
     ],
   exports: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
-  declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent]
+  declarations: [AlgoliaAppDirective, AlgoliaSearchComponent, AlgoliaResultsComponent, AlgoliaFacetsComponent, MapToIterablePipe, AlgoliaSortComponent, AlgoliaPaginationComponent, AlgoliaStatsComponent],
+  providers: [AlgoliaService]
 })
 export class AlgoliaModule {
-    static forRoot(): ModuleWithProviders {
+  constructor (@Optional() @SkipSelf() parentModule: AlgoliaModule) {
+    if (parentModule) {
+      throw new Error(
+        'CoreModule is already loaded. Import it in the AppModule only');
+    }
+  }
+
+  static forRoot(config: ApiServiceConfig): ModuleWithProviders {
     return {
       ngModule: AlgoliaModule,
       providers: [
-        AlgoliaService
+        {provide: ApiServiceConfig, useValue: config }
       ]
     };
   }
